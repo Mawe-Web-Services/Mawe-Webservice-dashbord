@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: linear-gradient(135deg, #313482, #845ec2);
+  color: white;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navigation ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navigation a {
+  color: white;
+  text-decoration: none;
+}
