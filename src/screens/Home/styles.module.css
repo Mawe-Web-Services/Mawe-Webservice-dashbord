@@ -1,0 +1,32 @@
+.textImageContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+}
+
+.textImageContainer h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.textImageContainer p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #000;
+  max-width: 500px;
+  margin-left: 20%;
+}
+
+.newasasImage {
+  margin-right: 15%;
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
