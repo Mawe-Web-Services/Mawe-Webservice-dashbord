@@ -1,26 +1,47 @@
-import styles from "./styles.module.css";
+import {
+  Button,
+  Container,
+  Divisor,
+  CreateAccount,
+  InputContainer,
+  Label,
+  LoginBox,
+  ForgetPassword,
+} from "./styles";
+
+import { MdMail } from "react-icons/md";
+import { FaLock } from "react-icons/fa";
+import Header from "../../components/Header";
 
 const Login = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles.loginBox}>
-        <h2>Logar na sua conta</h2>
-        <form>
-          <label>
+    <Container>
+      <LoginBox>
+        <form noValidate>
+          <h2>Logar na sua conta</h2>
+          <Label>
             Endereço de e-mail
-            <input type="text" placeholder="Endereço de e-mail" />
-          </label>
-          <label>
+            <InputContainer>
+              <MdMail />
+              <input type="email" placeholder="Endereço de e-mail" />
+            </InputContainer>
+          </Label>
+          <Label>
             Senha
-            <input type="text" placeholder="Senha" />
-          </label>
-          <button>Logar</button>
-          <div></div>
-          <span>Novo na MWS? <a href="#">Registrar</a></span>
+            <InputContainer>
+              <FaLock />
+              <input type="password" placeholder="Senha" />
+            </InputContainer>
+          </Label>
+          <Button>Logar</Button>
         </form>
-      </div>
-      <a href="#">Esqueceu sua senha?</a>
-    </div>
+        <Divisor />
+        <CreateAccount>
+          Novo na MWS? <a href="#">Registrar</a>
+        </CreateAccount>
+      </LoginBox>
+      <ForgetPassword href="#">Esqueceu sua senha?</ForgetPassword>
+    </Container>
   );
 };
 
