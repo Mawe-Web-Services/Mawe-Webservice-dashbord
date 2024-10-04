@@ -1,0 +1,20 @@
+.container {
+    background: linear-gradient(to bottom, #928fe6, #3731a0);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginBox {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.loginBox h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}

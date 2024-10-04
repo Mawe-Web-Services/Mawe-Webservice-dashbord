@@ -1,6 +1,7 @@
 import type React from 'react'
 import styles from './styles.module.css'
 import { ReactComponent as ReactLogo } from '../../assets/logo.svg'
+import { Link } from 'react-router-dom'
 
 const Header: React.FC = () => {
   return (
@@ -20,7 +21,7 @@ const Header: React.FC = () => {
               <a href="#link3">Support</a>
             </li>
             <li>
-              <a href="#">Login</a>
+              <Link to={"/login"}>Login</Link>
             </li>
           </ul>
         </nav>
