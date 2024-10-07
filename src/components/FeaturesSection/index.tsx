@@ -1,21 +1,32 @@
-import styles from "./styles.module.css";
+import type React from 'react'
+import {
+  FeaturesSection as StyledFeaturesSection,
+  FeatureItem as StyledFeatureItem,
+  FeatureIcon as StyledFeatureIcon,
+  FeatureTitle as StyledFeatureTitle,
+  FeatureDescription as StyledFeatureDescription,
+} from './FeaturesSectionStyles'
 
-type FeaturesSection = {
-  title: string;
-  icon: string;
-  text: string;
-};
+type FeaturesSectionProps = {
+  title: string
+  icon: string
+  text: string
+}
 
-const FeaturesSection = ({ title, icon, text }: FeaturesSection) => {
+const FeaturesSection: React.FC<FeaturesSectionProps> = ({
+  title,
+  icon,
+  text,
+}) => {
   return (
-    <section className={styles.featuresSection}>
-      <div className={styles.featureItem}>
-        <div className={styles.featureIcon}>{icon}</div>
-        <h3>{title}</h3>
-        <p>{text}</p>
-      </div>
-    </section>
-  );
-};
+    <StyledFeaturesSection>
+      <StyledFeatureItem>
+        <StyledFeatureIcon>{icon}</StyledFeatureIcon>
+        <StyledFeatureTitle>{title}</StyledFeatureTitle>
+        <StyledFeatureDescription>{text}</StyledFeatureDescription>
+      </StyledFeatureItem>
+    </StyledFeaturesSection>
+  )
+}
 
-export default FeaturesSection;
+export default FeaturesSection

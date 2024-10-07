@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background: linear-gradient(to right, #494592, #5753d7);
+  background: linear-gradient(to right, #494592, #5753d7, #494592);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
