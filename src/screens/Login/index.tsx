@@ -11,7 +11,6 @@ import {
 
 import { MdMail } from "react-icons/md";
 import { FaLock } from "react-icons/fa";
-import Header from "../../components/Header";
 
 const Login = () => {
   return (
