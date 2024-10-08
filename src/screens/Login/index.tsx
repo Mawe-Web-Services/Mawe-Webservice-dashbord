@@ -16,6 +16,10 @@ import { z } from "zod";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { User } from "../../services/api-types";
+import { APIService } from "../../services/api";
+import { toast } from "react-toastify";
+import { AxiosError } from "axios";
+import { useEffect } from "react";
 
 type Inputs = {
   email: string;
@@ -34,13 +38,29 @@ const Login = () => {
   const {
     register,
     handleSubmit,
+    reset,
+    setFocus,
     formState: { errors },
   } = useForm<Inputs>({
     resolver: zodResolver(schema),
   });
 
+  useEffect(() => {
+    setFocus("email");
+  }, [setFocus]);
+
   const onSubmit: SubmitHandler<Inputs> = async (data: User) => {
-    console.log(data);
+    const loginData = await APIService.loginUser(data);
+
+    if (loginData.code === 200) {
+      toast.success("Usuário logado com sucesso.");
+      setFocus("email");
+      reset();
+    } else {
+      toast.error(
+        "Algo deu errado com seu login, confira os campos e tente novamente."
+      );
+    }
   };
 
   return (
@@ -58,7 +78,9 @@ const Login = () => {
                 {...register("email")}
               />
             </InputContainer>
-            {errors.email?.message && <ErrorText>{errors.email?.message}</ErrorText>}
+            {errors.email?.message && (
+              <ErrorText>{errors.email?.message}</ErrorText>
+            )}
           </Label>
           <Label>
             Senha
@@ -70,7 +92,9 @@ const Login = () => {
                 {...register("password")}
               />
             </InputContainer>
-            {errors.password?.message && <ErrorText>{errors.password?.message}</ErrorText>}
+            {errors.password?.message && (
+              <ErrorText>{errors.password?.message}</ErrorText>
+            )}
           </Label>
           <Button>Logar</Button>
         </form>
