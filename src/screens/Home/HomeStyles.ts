@@ -12,6 +12,7 @@ export const TextImageContainer = styled.div`
 
 export const TextContent = styled.div`
   h2 {
+    margin-left: 100px;
     font-size: 28px;
     margin-bottom: 20px;
     color: #000;
