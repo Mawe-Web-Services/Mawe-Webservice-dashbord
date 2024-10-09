@@ -1,0 +1,23 @@
+{
+  "header": {
+    "title": "MWS: A nuvem que impulsiona o seu futuro.",
+
+    "products": "Produtos",
+    "docs": "Documentação",
+    "support": "Suporte",
+    "login": "Login"
+  },
+  "welcome": "Sobre a plataforma MWS",
+  "feature": {
+    "runtime": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt quaerat quidem voluptatem numquam praesentium, quasi hic reprehenderit labore rem, deleniti dolor assumenda, facilis architecto qui nam ipsa at dolores consequatur.",
+    "developerExperience": "Experiência do Desenvolvedor MWS",
+    "security": "Segurança e Conformidade",
+    "dataServices": "Serviços de Dados e Ecossistema",
+    "operationalExperience": "Experiência Operacional MWS OpEx"
+  },
+  "footer": {
+    "title": "Bom te ver aqui",
+    "contact": "Contato: meu-email@exemplo.com",
+    "credit": "Feito com amor © 2024 Mawe Web Service"
+  }
+}

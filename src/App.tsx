@@ -1,10 +1,13 @@
 import type React from 'react'
+import { useTranslation } from 'react-i18next'
 import Header from './components/Header'
 import Home from './screens/Home'
 
 import { LandingPage, Heading, CtaButton } from './AppStyles'
 
 const App: React.FC = () => {
+  const { t } = useTranslation()
+
   const animateButton = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
     const button = e.currentTarget
@@ -19,8 +22,10 @@ const App: React.FC = () => {
       <Header />
 
       <LandingPage>
-        <Heading>"MWS: A nuvem que impulsiona o seu futuro."</Heading>
-        <CtaButton onClick={animateButton}>See how MWS works</CtaButton>
+        <Heading>{t('header.title')}</Heading>{' '}
+        <CtaButton onClick={animateButton}>
+          {t('cta.buttonText', { defaultValue: 'See how MWS works' })}
+        </CtaButton>
       </LandingPage>
       <Home />
     </div>
