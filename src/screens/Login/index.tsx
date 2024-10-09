@@ -29,10 +29,7 @@ type Inputs = {
 const Login = () => {
   const schema = z.object({
     email: z.string().email({ message: "Este e-mail está inválido." }),
-    password: z
-      .string()
-      .trim()
-      .min(8, { message: "A senha é preciso ter, pelo menos, 8 caracteres." }),
+    password: z.string(),
   });
 
   const {
@@ -92,9 +89,6 @@ const Login = () => {
                 {...register("password")}
               />
             </InputContainer>
-            {errors.password?.message && (
-              <ErrorText>{errors.password?.message}</ErrorText>
-            )}
           </Label>
           <Button>Logar</Button>
         </form>
