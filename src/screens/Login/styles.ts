@@ -106,3 +106,7 @@ export const ForgetPassword = styled.a`
   color: ${colors.white};
   margin-top: 1rem;
 `;
+
+export const ErrorText = styled.p`
+  color: ${colors.error};
+`;
