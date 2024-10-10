@@ -15,10 +15,8 @@ import { FaLock } from "react-icons/fa";
 import { z } from "zod";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { User } from "../../services/api-types";
-import { APIService } from "../../services/api";
+import { RemoteService } from "../../remote/remote";
 import { toast } from "react-toastify";
-import { AxiosError } from "axios";
 import { useEffect } from "react";
 
 type Inputs = {
@@ -27,6 +25,8 @@ type Inputs = {
 };
 
 const Login = () => {
+  const remoteService = new RemoteService();
+
   const schema = z.object({
     email: z.string().email({ message: "Este e-mail está inválido." }),
     password: z.string(),
@@ -46,10 +46,20 @@ const Login = () => {
     setFocus("email");
   }, [setFocus]);
 
-  const onSubmit: SubmitHandler<Inputs> = async (data: User) => {
-    const loginData = await APIService.loginUser(data);
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    console.log(data);
 
-    if (loginData.code === 200) {
+    const response = await remoteService.remote<any>({
+      method: "post",
+      endpoint: `${process.env.REACT_APP_API_URL}/user/login`,
+      authorization: 'login-success',
+      body: data,
+      timeout: 0,
+    });
+
+    console.log(response);
+
+    if (response.result.code === 200) {
       toast.success("Usuário logado com sucesso.");
       setFocus("email");
       reset();
