@@ -15,7 +15,7 @@ import { FaLock } from "react-icons/fa";
 import { z } from "zod";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { IReturn, RemoteService } from "../../remote/remote";
+import { RemoteService } from "../../remote/remote";
 import { toast } from "react-toastify";
 import { useEffect } from "react";
 import useLogin from "../../hooks/useLogin";
@@ -26,8 +26,6 @@ type Inputs = {
 };
 
 const Login = () => {
-  const remoteService = new RemoteService();
-
   const schema = z.object({
     email: z.string().email({ message: "Este e-mail está inválido." }),
     password: z.string(),
