@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { HeaderContainer, Logo, Navigation } from './HeaderStyles'
 import { ReactComponent as ReactLogo } from '../../assets/logo.svg'
 import { Link } from 'react-router-dom'
+import LanguageSwitcher from '../Select/LanguageSwitcher'
 
 const Header: React.FC = () => {
   const { t } = useTranslation()
@@ -14,6 +15,7 @@ const Header: React.FC = () => {
       </Logo>
       <Navigation>
         <ul>
+          <LanguageSwitcher />
           <li>
             <a href="#link1">{t('header.products')}</a>
           </li>
@@ -23,6 +25,7 @@ const Header: React.FC = () => {
           <li>
             <a href="#link3">{t('header.support')}</a>
           </li>
+
           <li>
             <Link to={'/login'}>{t('header.login')}</Link>
           </li>

@@ -7,17 +7,40 @@
     "support": "Suporte",
     "login": "Login"
   },
+
+  "buttonHeader": {
+    "buttonText": "Veja como o MWS funciona"
+  },
+
   "welcome": "Sobre a plataforma MWS",
   "feature": {
     "runtime": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt quaerat quidem voluptatem numquam praesentium, quasi hic reprehenderit labore rem, deleniti dolor assumenda, facilis architecto qui nam ipsa at dolores consequatur.",
     "developerExperience": "Experiência do Desenvolvedor MWS",
     "security": "Segurança e Conformidade",
     "dataServices": "Serviços de Dados e Ecossistema",
-    "operationalExperience": "Experiência Operacional MWS OpEx"
+    "operationalExperience": "Seção de Implantação"
   },
+
+  "Deploy Sectio": {
+    "firtCard": "Centrado no desenvolvedor",
+    "SecondCard": "Centrado em aplicativos",
+    "thirdCard": "Centrado na produção"
+  },
+
   "footer": {
     "title": "Bom te ver aqui",
     "contact": "Contato: meu-email@exemplo.com",
     "credit": "Feito com amor © 2024 Mawe Web Service"
+  },
+  "login": {
+    "title": "Logar na sua conta",
+    "emailLabel": "Endereço de e-mail",
+    "emailPlaceholder": "Endereço de e-mail",
+    "passwordLabel": "Senha",
+    "passwordPlaceholder": "Senha",
+    "loginButton": "Logar",
+    "newUser": "Novo na MWS?",
+    "registerLink": "Registrar",
+    "forgetPassword": "Esqueceu sua senha?"
   }
 }

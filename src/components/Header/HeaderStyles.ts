@@ -19,10 +19,14 @@ export const Navigation = styled.nav`
     list-style: none;
     display: flex;
     padding: 0;
+    margin: 0;
 
     li {
+      display: flex;
+      align-items: center;
       margin-right: 20px;
-
+      height: 40px; 
+      
       a {
         text-decoration: none;
         color: #f9f9f9;

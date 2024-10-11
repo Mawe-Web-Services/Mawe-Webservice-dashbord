@@ -19,7 +19,6 @@ const Home: React.FC = () => {
 
   return (
     <Container>
-      <LanguageSwitcher />
       <TextImageContainer>
         <TextContent>
           <h2>{t('welcome')}</h2>
@@ -68,17 +67,17 @@ const Home: React.FC = () => {
         </h1>
         <Features>
           <FeaturesSection
-            title={t('feature.operationalExperience')}
+            title={t('DeploySection.firstCard')}
             icon="🪙"
             text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt quaerat quidem voluptatem numquam praesentium, quasi hic reprehenderit labore rem, deleniti dolor assumenda, facilis architecto qui nam ipsa at dolores consequatur."
           />
           <FeaturesSection
-            title={t('feature.operationalExperience')}
+            title={t('DeploySection.SecondCard')}
             icon="👁️‍🗨️"
             text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt quaerat quidem voluptatem numquam praesentium, quasi hic reprehenderit labore rem, deleniti dolor assumenda, facilis architecto qui nam ipsa at dolores consequatur."
           />
           <FeaturesSection
-            title={t('feature.operationalExperience')}
+            title={t('DeploySection.thirdCard')}
             icon="💵"
             text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt quaerat quidem voluptatem numquam praesentium, quasi hic reprehenderit labore rem, deleniti dolor assumenda, facilis architecto qui nam ipsa at dolores consequatur."
           />

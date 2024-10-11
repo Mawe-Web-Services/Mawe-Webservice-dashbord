@@ -18,8 +18,6 @@ export const TextContent = styled.div`
     color: #000;
   }
 
- 
-  
   p {
     font-size: 17px;
     line-height: 1.6;

@@ -1,16 +1,44 @@
-import styled from 'styled-components'
+import type { StylesConfig } from 'react-select'
 
-export const Select = styled.select`
-  font-size: 16px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #f9f9f9;
-  transition: border-color 0.3s, background-color 0.3s;
+interface LanguageOption {
+  value: string
+  label: JSX.Element
+}
 
-  &:focus {
-    outline: none;
-    border-color: #007bff;
-    background-color: #fff;
-  }
-`
+export const customStyles: StylesConfig<LanguageOption, false> = {
+  control: provided => ({
+    ...provided,
+    backgroundColor: 'transparent',
+    border: 'none',
+    boxShadow: 'none',
+    padding: 0,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '40px',
+    marginBottom: 0,
+  }),
+  singleValue: provided => ({
+    ...provided,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: '#fff',
+    height: '100%',
+  }),
+  option: (provided, state) => ({
+    ...provided,
+    backgroundColor: state.isFocused
+      ? 'rgba(255, 255, 255, 0.1)'
+      : 'transparent',
+    color: '#fff',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '40px',
+  }),
+  menu: provided => ({
+    ...provided,
+    backgroundColor: 'transparent',
+  }),
+}

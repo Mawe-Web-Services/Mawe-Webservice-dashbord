@@ -22,9 +22,9 @@ const App: React.FC = () => {
       <Header />
 
       <LandingPage>
-        <Heading>{t('header.title')}</Heading>{' '}
+        <Heading>{t('header.title')}</Heading>
         <CtaButton onClick={animateButton}>
-          {t('cta.buttonText', { defaultValue: 'See how MWS works' })}
+          {t('buttonHeader.buttonText')}
         </CtaButton>
       </LandingPage>
       <Home />

@@ -1,23 +1,47 @@
 {
   "header": {
-    "title": "MWS: The cloud that drives your future.",
-
+    "title": "MWS: The Cloud That Drives Your Future.",
     "products": "Products",
     "docs": "Docs",
     "support": "Support",
     "login": "Login"
   },
+
+  "buttonHeader": {
+    "buttonText": "See how MWS works"
+  },
+
   "welcome": "About MWS Platform",
   "feature": {
     "runtime": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt quaerat quidem voluptatem numquam praesentium, quasi hic reprehenderit labore rem, deleniti dolor assumenda, facilis architecto qui nam ipsa at dolores consequatur.",
     "developerExperience": "MWS Developer Experience",
     "security": "Security and Compliance",
     "dataServices": "Data Services and Ecosystem",
-    "operationalExperience": "MWS Operational Experience OpEx"
+    "operationalExperience": "Deploy Section"
   },
+
+  "DeploySection": {
+    "firstCard": "Developer-centric",
+
+    "SecondCard": "App-centric",
+    "thirdCard": "Production-centric"
+  },
+
   "footer": {
     "title": "Nice to see you here",
     "contact": "Contact: my-email@example.com",
     "credit": "Made with love © 2024 Mawe Web Service"
+  },
+
+  "login": {
+    "title": "Log in to your account",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "Email address",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Password",
+    "loginButton": "Log in",
+    "newUser": "New to MWS?",
+    "registerLink": "Sign up",
+    "forgetPassword": "Forgot your password?"
   }
 }
