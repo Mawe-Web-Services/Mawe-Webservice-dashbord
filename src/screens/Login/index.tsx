@@ -29,82 +29,78 @@ const Login = () => {
     password: string;
   };
 
-  const Login = () => {
-    const schema = z.object({
-      email: z.string().email({ message: "Este e-mail está inválido." }),
-      password: z.string(),
-    });
+  const schema = z.object({
+    email: z.string().email({ message: t("login.emailAddressInvalid") }),
+    password: z.string(),
+  });
 
-    const {
-      register,
-      handleSubmit,
-      reset,
-      setFocus,
-      formState: { errors },
-    } = useForm<Inputs>({
-      resolver: zodResolver(schema),
-    });
+  const {
+    register,
+    handleSubmit,
+    reset,
+    setFocus,
+    formState: { errors },
+  } = useForm<Inputs>({
+    resolver: zodResolver(schema),
+  });
 
-    useEffect(() => {
+  useEffect(() => {
+    setFocus("email");
+  }, [setFocus]);
+
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    const response = await useLogin(data);
+
+    if (response.result && response.result.code === 200) {
+      toast.success(t("login.success"));
       setFocus("email");
-    }, [setFocus]);
-
-    const onSubmit: SubmitHandler<Inputs> = async (data) => {
-      const response = await useLogin(data);
-
-      if (response.result && response.result.code === 200) {
-        toast.success("Usuário logado com sucesso.");
-        setFocus("email");
-        reset();
-      } else {
-        toast.error(
-          "Algo deu errado com seu login, confira os campos e tente novamente."
-        );
-      }
-    };
-
-    return (
-      <Container>
-        <LoginBox>
-          <form noValidate onSubmit={handleSubmit(onSubmit)}>
-            <h2>{t("login.title")}</h2>
-            <Label>
-              {t("login.emailLabel")}
-              <InputContainer>
-                <MdMail />
-                <input
-                  type="email"
-                  placeholder={t("login.emailPlaceholder")}
-                  {...register("email")}
-                />
-              </InputContainer>
-              {errors.email?.message && (
-                <ErrorText>{errors.email?.message}</ErrorText>
-              )}
-            </Label>
-            <Label>
-              {t("login.passwordLabel")}
-              <InputContainer>
-                <FaLock />
-                <input
-                  type="password"
-                  placeholder={t("login.passwordPlaceholder")}
-                  {...register("password")}
-                />
-              </InputContainer>
-            </Label>
-            <Button>{t("login.loginButton")}</Button>
-          </form>
-          <Divisor />
-          <CreateAccount>
-            {/* biome-ignore lint/a11y/useValidAnchor: <explanation> */}
-            {t("login.newUser")} <a href="#">{t("login.registerLink")}</a>
-          </CreateAccount>
-        </LoginBox>
-        <ForgetPassword href="#">{t("login.forgetPassword")}</ForgetPassword>
-      </Container>
-    );
+      reset();
+    } else {
+      toast.error(t("login.error"));
+    }
   };
+
+  return (
+    <Container>
+      <LoginBox>
+        <form noValidate onSubmit={handleSubmit(onSubmit)}>
+          <h2>{t("login.title")}</h2>
+          <Label>
+            {t("login.emailLabel")}
+            <InputContainer>
+              <MdMail />
+              <input
+                type="email"
+                placeholder={t("login.emailPlaceholder")}
+                {...register("email")}
+              />
+            </InputContainer>
+            {errors.email?.message && (
+              <ErrorText>{errors.email?.message}</ErrorText>
+            )}
+          </Label>
+          <Label>
+            {t("login.passwordLabel")}
+            <InputContainer>
+              <FaLock />
+              <input
+                type="password"
+                placeholder={t("login.passwordPlaceholder")}
+                {...register("password")}
+              />
+            </InputContainer>
+          </Label>
+          <Button>{t("login.loginButton")}</Button>
+        </form>
+        <Divisor />
+        <CreateAccount>
+          {/* biome-ignore lint/a11y/useValidAnchor: <explanation> */}
+          {t("login.newUser")} <a href="#">{t("login.registerLink")}</a>
+        </CreateAccount>
+      </LoginBox>
+      <ForgetPassword href="#">{t("login.forgetPassword")}</ForgetPassword>
+    </Container>
+  );
 };
 
 export default Login;

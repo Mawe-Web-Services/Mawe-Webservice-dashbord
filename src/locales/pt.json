@@ -41,6 +41,9 @@
     "loginButton": "Logar",
     "newUser": "Novo na MWS?",
     "registerLink": "Registrar",
-    "forgetPassword": "Esqueceu sua senha?"
+    "forgetPassword": "Esqueceu sua senha?",
+    "emailAddressInvalid": "Este e-mail está invalido.",
+    "success": "Usuário logado com sucesso.",
+    "error": "Algo deu errado com seu login, confira os campos e tente novamente."
   }
 }
