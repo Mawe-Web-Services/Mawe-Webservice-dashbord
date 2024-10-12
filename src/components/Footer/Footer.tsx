@@ -1,5 +1,5 @@
-// Footer.tsx
 import type React from 'react'
+import { useTranslation } from 'react-i18next'
 import {
   FooterContainer,
   FooterTitle,
@@ -8,11 +8,13 @@ import {
 } from './FooterStyles'
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation()
+
   return (
     <FooterContainer>
-      <FooterTitle>Nice to see you here</FooterTitle>
-      <FooterText>Contact: my-email@example.com</FooterText>
-      <FooterText>Made with love © 2024 Mawe Web Service</FooterText>
+      <FooterTitle>{t('footer.title')}</FooterTitle>
+      <FooterText>{t('footer.contact')}</FooterText>
+      <FooterText>{t('footer.credit')}</FooterText>
       <SocialLinks>
         <a
           href="https://www.linkedin.com/company/105147342/admin/analytics/visitors/"

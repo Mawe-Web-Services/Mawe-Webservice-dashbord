@@ -8,7 +8,13 @@ import {
   LoginBox,
   ForgetPassword,
   ErrorText,
-} from "./styles";
+} from './styles'
+import '../../i18n/index'
+import { useTranslation } from 'react-i18next'
+
+const Login = () => {
+  
+const { t } = useTranslation()
 
 import { MdMail } from "react-icons/md";
 import { FaLock } from "react-icons/fa";
@@ -63,43 +69,42 @@ const Login = () => {
   return (
     <Container>
       <LoginBox>
-        <form noValidate onSubmit={handleSubmit(onSubmit)}>
-          <h2>Logar na sua conta</h2>
+        <form noValidate>
+          <h2>{t('login.title')}</h2>
           <Label>
-            Endereço de e-mail
+            {t('login.emailLabel')}
             <InputContainer>
               <MdMail />
-              <input
-                type="email"
-                placeholder="Endereço de e-mail"
-                {...register("email")}
-              />
+              <input type="email" placeholder={t('login.emailPlaceholder')} {...register("email")} />
+
             </InputContainer>
             {errors.email?.message && (
               <ErrorText>{errors.email?.message}</ErrorText>
             )}
           </Label>
           <Label>
-            Senha
+            {t('login.passwordLabel')}
             <InputContainer>
               <FaLock />
               <input
                 type="password"
-                placeholder="Senha"
-                {...register("password")}
+                placeholder={t('login.passwordPlaceholder') 
+                {...register("password")}}
+               
               />
             </InputContainer>
           </Label>
-          <Button>Logar</Button>
+          <Button>{t('login.loginButton')}</Button>
         </form>
         <Divisor />
         <CreateAccount>
-          Novo na MWS? <a href="#">Registrar</a>
+          {/* biome-ignore lint/a11y/useValidAnchor: <explanation> */}
+          {t('login.newUser')} <a href="#">{t('login.registerLink')}</a>
         </CreateAccount>
       </LoginBox>
-      <ForgetPassword href="#">Esqueceu sua senha?</ForgetPassword>
+      <ForgetPassword href="#">{t('login.forgetPassword')}</ForgetPassword>
     </Container>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login
