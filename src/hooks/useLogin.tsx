@@ -1,19 +1,19 @@
 import { IReturn, RemoteService } from "../remote/remote";
 
-type User = {
+interface IUser {
   email: string;
   password: string;
 }
 
-type LoginReturn = {
+interface ILoginReturn {
   code: number;
   text: string;
 }
 
-const useLogin = async (data: User): Promise<IReturn<LoginReturn>> => {
+const useLogin = async (data: IUser): Promise<IReturn<ILoginReturn>> => {
   const remoteService = new RemoteService();
 
-  const response = await remoteService.remote<LoginReturn>({
+  const response = await remoteService.remote<ILoginReturn>({
     method: "post",
     endpoint: `${process.env.REACT_APP_API_URL}/user/login`,
     authorization: "login-success",
