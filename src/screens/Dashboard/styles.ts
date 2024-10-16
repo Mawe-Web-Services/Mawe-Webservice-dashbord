@@ -58,4 +58,47 @@ export const CreateFirstApp = styled.div`
   h3 {
     color: ${themes.colors.primary};
   }
+
+  @media(max-width: 600px) {
+    p {
+      font-size: 0.7rem;
+    }
+  }
+`;
+
+export const Languages = styled.div`
+  text-align: center;
+  line-height: 2rem;
+
+  h3 {
+    color: #475366;
+    font-size: 1rem;
+  }
+`;
+
+export const TechnologiesContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-bottom: 2rem;
+`;
+
+export const Tech = styled.div`
+  line-height: 1.3rem;
+  text-align: center;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  cursor: pointer;
+
+  span {
+    display: block;
+  }
+
+  svg {
+    font-size: 2rem;
+    color: #a6b1c1;
+  }
 `;
