@@ -46,5 +46,15 @@
     "emailAddressInvalid": "This email is invalid.",
     "success": "User logged in successfully.",
     "error": "Something went wrong with your login, check the fields and try again."
+  },
+
+  "dashboard": {
+    "create_app": "Create your first App!",
+    "personal": "Personal",
+    "btn_new": "New",
+    "create_app_lore": "Apps and pipelines you create or collaborate on appear here.",
+    "btn_create_app": "Create new app",
+    "techs_title": "Looking for help to started with your language?",
+    "techs_lore": "Start by choosing a language."
   }
 }

@@ -45,5 +45,15 @@
     "emailAddressInvalid": "Este e-mail está invalido.",
     "success": "Usuário logado com sucesso.",
     "error": "Algo deu errado com seu login, confira os campos e tente novamente."
+  },
+
+  "dashboard": {
+    "create_app": "Crie o seu primeiro App!",
+    "personal": "Pessoal",
+    "btn_new": "Novo",
+    "create_app_lore": "Apps e pipeline que você criar irá aparecer aqui.",
+    "btn_create_app": "Criar um novo App",
+    "techs_title": "Procurando por ajuda para começar com sua tecnologia?",
+    "techs_lore": "Começe escolhendo uma tecnologia."
   }
 }
