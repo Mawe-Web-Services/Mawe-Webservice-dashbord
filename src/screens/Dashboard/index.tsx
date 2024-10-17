@@ -1,29 +1,32 @@
 import logo from "../../assets/logo.png";
 import { IoPersonCircle } from "react-icons/io5";
 import {
+  AvatarMenu,
+  AvatarOptions,
   Container,
   CreateAppMenu,
   CreateFirstApp,
   DashboardHeader,
   Languages,
+  Option,
   PersonalContainer,
   Tech,
   TechnologiesContainer,
 } from "./styles";
 import { ButtonContainer } from "../../components/Button/styles";
 import { IoPersonSharp } from "react-icons/io5";
+import { MdExitToApp } from "react-icons/md";
 
-import { DiRuby, DiClojure, DiScala } from "react-icons/di";
-import { FaPhp, FaNodeJs, FaPython, FaJava } from "react-icons/fa";
-import { FaGolang } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import { Menu, MenuItem } from "@mui/material";
 
 import { IoMdAdd } from "react-icons/io";
+import techs from "../../mocks/techs";
 
 const Dashboard = () => {
   const { t } = useTranslation();
+  const [isAvatarMenu, setIsAvatarMenu] = useState(false);
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -37,9 +40,26 @@ const Dashboard = () => {
   return (
     <div>
       <DashboardHeader>
-        <img src={logo} alt="logo" width={80} />
-        <IoPersonCircle />
+        <a href="http://localhost:3000/">
+          <img src={logo} alt="Logo" width={80} />
+        </a>
+        <IoPersonCircle onClick={() => setIsAvatarMenu(!isAvatarMenu)} />
       </DashboardHeader>
+
+      {isAvatarMenu && (
+        <AvatarMenu>
+          <IoPersonCircle />
+          <h4>Gabriel Santos</h4>
+          <p>gabriel.oliveira2040@hotmail.com</p>
+          <AvatarOptions>
+            <Option>
+              <MdExitToApp />
+              <p>Sair</p>
+            </Option>
+          </AvatarOptions>
+        </AvatarMenu>
+      )}
+
       <CreateAppMenu>
         <Container style={{ display: "flex", justifyContent: "space-between" }}>
           <PersonalContainer>
@@ -67,9 +87,9 @@ const Dashboard = () => {
             }}
             style={{ left: "-5%" }}
           >
-            <MenuItem onClick={handleClose} style={{fontSize: 15}}>
-              <IoMdAdd style={{marginRight: 5}} size={20} />
-              Criar novo app
+            <MenuItem onClick={handleClose} style={{ fontSize: 15 }}>
+              <IoMdAdd style={{ marginRight: 5 }} size={20} />
+              {t("dashboard.btn_create_app")}
             </MenuItem>
           </Menu>
         </Container>
@@ -86,38 +106,12 @@ const Dashboard = () => {
           <h3>{t("dashboard.techs_title")}</h3>
           <p>{t("dashboard.techs_lore")}</p>
           <TechnologiesContainer>
-            <Tech>
-              <DiRuby />
-              <span>Ruby</span>
-            </Tech>
-            <Tech>
-              <FaPhp />
-              <span>PHP</span>
-            </Tech>
-            <Tech>
-              <FaNodeJs />
-              <span>Node.js</span>
-            </Tech>
-            <Tech>
-              <FaPython />
-              <span>Python</span>
-            </Tech>
-            <Tech>
-              <FaJava />
-              <span>Java</span>
-            </Tech>
-            <Tech>
-              <FaGolang />
-              <span>Go</span>
-            </Tech>
-            <Tech>
-              <DiClojure />
-              <span>Clojure</span>
-            </Tech>
-            <Tech>
-              <DiScala />
-              <span>Scala</span>
-            </Tech>
+            {techs.map((tech) => (
+              <Tech key={tech.id}>
+                <tech.icon />
+                <span>{tech.name}</span>
+              </Tech>
+            ))}
           </TechnologiesContainer>
         </Languages>
       </Container>
