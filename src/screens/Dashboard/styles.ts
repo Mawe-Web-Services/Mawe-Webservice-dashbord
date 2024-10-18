@@ -81,6 +81,7 @@ export const AppsContainer = styled.div`
 
 export const AllAppsContainer = styled.div`
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
 
@@ -105,11 +106,6 @@ export const App = styled.div`
 
   @media (min-width: 801px) and (max-width: 1000px) {
     width: 80%;
-    margin: 0.5rem auto;
-  }
-
-  @media (min-width: 1001px) and (max-width: 1200px) {
-    width: 70%;
     margin: 0.5rem auto;
   }
 
