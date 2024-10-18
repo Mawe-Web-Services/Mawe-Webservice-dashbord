@@ -49,12 +49,23 @@
   },
 
   "dashboard": {
-    "create_app": "Create your first App!",
+    "createApp": "Create your first App!",
     "personal": "Personal",
-    "btn_new": "New",
-    "create_app_lore": "Apps and pipelines you create or collaborate on appear here.",
-    "btn_create_app": "Create new app",
-    "techs_title": "Looking for help to started with your language?",
-    "techs_lore": "Start by choosing a language."
+    "btnNew": "New",
+    "createAppLore": "Apps and pipelines you create or collaborate on appear here.",
+    "btnCreateApp": "Create new app",
+    "techsTitle": "Looking for help to started with your language?",
+    "techsLore": "Start by choosing a language.",
+    "appTimeAgo": "{{leftText}} <1/> {{rightText}}",
+    "logout": "Logout"
+  },
+  "timeUnit": {
+    "second": "s",
+    "minute": "m",
+    "hour": "h",
+    "week": "w",
+    "day": "d",
+    "month": "mo",
+    "year": "y"
   }
 }
