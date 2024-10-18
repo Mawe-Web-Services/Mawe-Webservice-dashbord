@@ -5,31 +5,42 @@ import {
   AvatarOptions,
   Container,
   CreateAppMenu,
-  CreateFirstApp,
+  AppsContainer,
   DashboardHeader,
   Languages,
   Option,
   PersonalContainer,
   Tech,
   TechnologiesContainer,
+  App,
+  AppInformations,
+  GithubInformations,
+  AppGitInformations,
+  AllAppsContainer,
 } from "./styles";
 import { ButtonContainer } from "../../components/Button/styles";
 import { IoPersonSharp } from "react-icons/io5";
 import { MdExitToApp } from "react-icons/md";
 
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import { useState } from "react";
 import { Menu, MenuItem } from "@mui/material";
 
 import { IoMdAdd } from "react-icons/io";
 import techs from "../../mocks/techs";
+import { useLocation } from "react-router-dom";
+import { FaCodeBranch, FaGithub } from "react-icons/fa";
+import apps from "../../mocks/apps";
 
 const Dashboard = () => {
   const { t } = useTranslation();
   const [isAvatarMenu, setIsAvatarMenu] = useState(false);
 
+  const { pathname } = useLocation();
+
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
+
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
@@ -40,7 +51,7 @@ const Dashboard = () => {
   return (
     <div>
       <DashboardHeader>
-        <a href="http://localhost:3000/">
+        <a href={`http://localhost:3000${pathname}`}>
           <img src={logo} alt="Logo" width={80} />
         </a>
         <IoPersonCircle onClick={() => setIsAvatarMenu(!isAvatarMenu)} />
@@ -54,7 +65,7 @@ const Dashboard = () => {
           <AvatarOptions>
             <Option>
               <MdExitToApp />
-              <p>Sair</p>
+              <p>{t("dashboard.logout")}</p>
             </Option>
           </AvatarOptions>
         </AvatarMenu>
@@ -74,7 +85,7 @@ const Dashboard = () => {
             aria-expanded={open ? "true" : undefined}
             onClick={handleClick}
           >
-            {t("dashboard.btn_new")}
+            {t("dashboard.btnNew")}
           </ButtonContainer>
 
           <Menu
@@ -89,22 +100,52 @@ const Dashboard = () => {
           >
             <MenuItem onClick={handleClose} style={{ fontSize: 15 }}>
               <IoMdAdd style={{ marginRight: 5 }} size={20} />
-              {t("dashboard.btn_create_app")}
+              {t("dashboard.btnCreateApp")}
             </MenuItem>
           </Menu>
         </Container>
       </CreateAppMenu>
       <Container>
-        <CreateFirstApp>
-          <h3>{t("dashboard.create_app")}</h3>
-          <p>{t("dashboard.create_app_lore")}</p>
+        <AppsContainer>
+          {/* <h3>{t("dashboard.createApp")}</h3>
+          <p>{t("dashboard.createAppLore")}</p>
           <ButtonContainer variant="fill">
-            {t("dashboard.btn_create_app")}
-          </ButtonContainer>
-        </CreateFirstApp>
+            {t("dashboard.btnCreateApp")}
+          </ButtonContainer> */}
+          <AllAppsContainer>
+            {apps.map((app) => (
+              <App key={app.id}>
+                <AppInformations>
+                  <img src={logo} alt="app-logo" />
+                  <div>
+                    <p>{app.name}</p>
+                    <p>{app.link}</p>
+                  </div>
+                </AppInformations>
+                <GithubInformations>
+                  <FaGithub />
+                  <span>{app.gitRepo}</span>
+                </GithubInformations>
+                <AppGitInformations>
+                  <span>{app.commit}</span>
+                  <span>
+                    <Trans t={t} i18nKey={"appTimeAgo"}>
+                      {{
+                        leftText: `${app.time}${t(
+                          `timeUnit.${app.timeUnity}`
+                        )} ago on`,
+                      }}{" "}
+                      <FaCodeBranch /> {{ rightText: app.branch }}
+                    </Trans>
+                  </span>
+                </AppGitInformations>
+              </App>
+            ))}
+          </AllAppsContainer>
+        </AppsContainer>
         <Languages>
-          <h3>{t("dashboard.techs_title")}</h3>
-          <p>{t("dashboard.techs_lore")}</p>
+          <h3>{t("dashboard.techsTitle")}</h3>
+          <p>{t("dashboard.techsLore")}</p>
           <TechnologiesContainer>
             {techs.map((tech) => (
               <Tech key={tech.id}>

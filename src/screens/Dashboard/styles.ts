@@ -26,7 +26,7 @@ export const DashboardHeader = styled.header`
 `;
 
 export const Container = styled.main`
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
 `;
 
@@ -60,7 +60,7 @@ export const PersonalContainer = styled.div`
   }
 `;
 
-export const CreateFirstApp = styled.div`
+export const AppsContainer = styled.div`
   border: 1px solid rgba(0, 0, 0, 0.2);
   margin: 2rem 1rem;
   padding: 1rem;
@@ -76,6 +76,82 @@ export const CreateFirstApp = styled.div`
     p {
       font-size: 0.7rem;
     }
+  }
+`;
+
+export const AllAppsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  @media (max-width: 1000px) {
+    display: block;
+  }
+`;
+
+export const App = styled.div`
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
+  width: 32.4%;
+  padding: 1rem;
+  border-radius: 10px;
+  line-height: normal;
+  text-align: left;
+  cursor: pointer;
+
+  @media (max-width: 800px) {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 801px) and (max-width: 1000px) {
+    width: 80%;
+    margin: 0.5rem auto;
+  }
+
+  @media (min-width: 1001px) and (max-width: 1200px) {
+    width: 70%;
+    margin: 0.5rem auto;
+  }
+
+`;
+
+export const AppInformations = styled.div`
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+
+  img {
+    width: 40px;
+    border-radius: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+  }
+`;
+
+export const GithubInformations = styled.div`
+  background-color: ${themes.colors.primary};
+  color: ${themes.colors.white};
+  padding: 0.5rem;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  width: max-content;
+
+  svg {
+    font-size: 20px;
+  }
+`;
+
+export const AppGitInformations = styled.div`
+  span {
+    display: block;
+    color: gray;
+  }
+
+  .branch-name {
+    display: inline;
+    color: ${themes.colors.black};
   }
 `;
 
