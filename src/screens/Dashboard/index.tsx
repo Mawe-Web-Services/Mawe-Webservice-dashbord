@@ -23,30 +23,30 @@ import { IoPersonSharp } from "react-icons/io5";
 import { MdExitToApp } from "react-icons/md";
 
 import { Trans, useTranslation } from "react-i18next";
-import { useState } from "react";
-import { Menu, MenuItem } from "@mui/material";
-
-import { IoMdAdd } from "react-icons/io";
+import { useEffect, useState } from "react";
 import techs from "../../mocks/techs";
 import { useLocation } from "react-router-dom";
 import { FaCodeBranch, FaGithub } from "react-icons/fa";
 import apps from "../../mocks/apps";
+import useMe, { IMeReturn } from "../../hooks/useMe";
+import { IReturn } from "../../remote/remote";
 
 const Dashboard = () => {
   const { t } = useTranslation();
   const [isAvatarMenu, setIsAvatarMenu] = useState(false);
+  const [me, setMe] = useState<IReturn<IMeReturn>>();
 
   const { pathname } = useLocation();
 
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
+  useEffect(() => {
+    const fetchMe = async () => {
+      const me = await useMe({ email: "gabriel.oliveira2040@hotmail.com" });
 
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+      setMe(me);
+    };
+
+    fetchMe();
+  }, []);
 
   return (
     <div>
@@ -60,8 +60,8 @@ const Dashboard = () => {
       {isAvatarMenu && (
         <AvatarMenu>
           <IoPersonCircle />
-          <h4>Gabriel Santos</h4>
-          <p>gabriel.oliveira2040@hotmail.com</p>
+          <h4>{me?.result.username}</h4>
+          <p>{me?.result.email}</p>
           <AvatarOptions>
             <Option>
               <MdExitToApp />
@@ -77,32 +77,9 @@ const Dashboard = () => {
             <IoPersonSharp />
             <span>{t("dashboard.personal")}</span>
           </PersonalContainer>
-          <ButtonContainer
-            variant="normal"
-            id="new-button"
-            aria-controls={open ? "basic-menu" : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
-            onClick={handleClick}
-          >
+          <ButtonContainer variant="normal">
             {t("dashboard.btnNew")}
           </ButtonContainer>
-
-          <Menu
-            id="basic-menu"
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            MenuListProps={{
-              "aria-labelledby": "new-button",
-            }}
-            style={{ left: "-5%" }}
-          >
-            <MenuItem onClick={handleClose} style={{ fontSize: 15 }}>
-              <IoMdAdd style={{ marginRight: 5 }} size={20} />
-              {t("dashboard.btnCreateApp")}
-            </MenuItem>
-          </Menu>
         </Container>
       </CreateAppMenu>
       <Container>
@@ -129,7 +106,7 @@ const Dashboard = () => {
                 <AppGitInformations>
                   <span>{app.commit}</span>
                   <span>
-                    <Trans t={t} i18nKey={"appTimeAgo"}>
+                    <Trans t={t} i18nKey={"dashboard.appTimeAgo"}>
                       {{
                         leftText: `${app.time}${t(
                           `timeUnit.${app.timeUnity}`

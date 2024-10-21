@@ -11,7 +11,7 @@ export interface IReturn<T> {
   error?: Error;
 }
 
-type HttpMethod = 'get' | 'post' | 'put' | 'delete';
+type HttpMethod = "get" | "post" | "put" | "delete";
 
 export interface IRequest {
   authorization: string;
@@ -26,7 +26,7 @@ export class RemoteService {
   private authorization: string;
   private axiosInstance: AxiosInstance | undefined;
   constructor() {
-    this.authorization = 'your-auth-token';
+    this.authorization = "your-auth-token";
   }
 
   public async getAxiosIntance({
@@ -65,6 +65,7 @@ export class RemoteService {
         url: `${endpoint}`,
         ...(method !== "get" && { data: body }),
       };
+
       const response = await axiosInstance.request(config);
 
       return { result: response?.data };
