@@ -41,6 +41,30 @@
     "loginButton": "Logar",
     "newUser": "Novo na MWS?",
     "registerLink": "Registrar",
-    "forgetPassword": "Esqueceu sua senha?"
+    "forgetPassword": "Esqueceu sua senha?",
+    "emailAddressInvalid": "Este e-mail está invalido.",
+    "success": "Usuário logado com sucesso.",
+    "error": "Algo deu errado com seu login, confira os campos e tente novamente."
+  },
+
+  "dashboard": {
+    "createApp": "Crie o seu primeiro App!",
+    "personal": "Pessoal",
+    "btnNew": "Novo",
+    "createAppLore": "Apps e pipeline que você criar irá aparecer aqui.",
+    "btnCreateApp": "Criar um novo App",
+    "techsTitle": "Procurando por ajuda para começar com sua tecnologia?",
+    "techsLore": "Começe escolhendo uma tecnologia.",
+    "appTimeAgo": "{{leftText}} <1/> {{rightText}}",
+    "logout": "Sair"
+  },
+  "timeUnit": {
+    "second": "s",
+    "minute": "min",
+    "hour": "h",
+    "week": "sem",
+    "day": "d",
+    "month": "m",
+    "year": "a"
   }
 }
