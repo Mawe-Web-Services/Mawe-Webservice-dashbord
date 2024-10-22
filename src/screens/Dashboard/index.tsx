@@ -1,14 +1,9 @@
 import logo from "../../assets/logo.png";
-import { IoPersonCircle } from "react-icons/io5";
 import {
-  AvatarMenu,
-  AvatarOptions,
   Container,
   CreateAppMenu,
   AppsContainer,
-  DashboardHeader,
   Languages,
-  Option,
   PersonalContainer,
   Tech,
   TechnologiesContainer,
@@ -20,57 +15,17 @@ import {
 } from "./styles";
 import { ButtonContainer } from "../../components/Button/styles";
 import { IoPersonSharp } from "react-icons/io5";
-import { MdExitToApp } from "react-icons/md";
 
 import { Trans, useTranslation } from "react-i18next";
-import { useEffect, useState } from "react";
 import techs from "../../mocks/techs";
-import { useLocation } from "react-router-dom";
 import { FaCodeBranch, FaGithub } from "react-icons/fa";
 import apps from "../../mocks/apps";
-import useMe, { IMeReturn } from "../../hooks/useMe";
-import { IReturn } from "../../remote/remote";
 
 const Dashboard = () => {
   const { t } = useTranslation();
-  const [isAvatarMenu, setIsAvatarMenu] = useState(false);
-  const [me, setMe] = useState<IReturn<IMeReturn>>();
-
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    const fetchMe = async () => {
-      const me = await useMe({ email: "gabriel.oliveira2040@hotmail.com" });
-
-      setMe(me);
-    };
-
-    fetchMe();
-  }, []);
 
   return (
     <div>
-      <DashboardHeader>
-        <a href={`http://localhost:3000${pathname}`}>
-          <img src={logo} alt="Logo" width={80} />
-        </a>
-        <IoPersonCircle onClick={() => setIsAvatarMenu(!isAvatarMenu)} />
-      </DashboardHeader>
-
-      {isAvatarMenu && (
-        <AvatarMenu>
-          <IoPersonCircle />
-          <h4>{me?.result.username}</h4>
-          <p>{me?.result.email}</p>
-          <AvatarOptions>
-            <Option>
-              <MdExitToApp />
-              <p>{t("dashboard.logout")}</p>
-            </Option>
-          </AvatarOptions>
-        </AvatarMenu>
-      )}
-
       <CreateAppMenu>
         <Container style={{ display: "flex", justifyContent: "space-between" }}>
           <PersonalContainer>
