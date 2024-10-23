@@ -17,9 +17,9 @@ const TableClusters = () => {
       </ClusterHeaderRow>
 
       <ClusterRow>
-        <ClusterCell style={{ display: "flex", alignItems: "center" }}>
-          <img src={logo} alt="Brasil" className="cluster-image" width={50} />
-          <h2 className="cluster-title">Brasil</h2>
+        <ClusterCell className="cluster-name" style={{ display: "flex", alignItems: "center" }}>
+          <img src={logo} alt="Brasil" width={50} />
+          <h2>Brasil</h2>
         </ClusterCell>
         <ClusterCell>60 disponíveis</ClusterCell>
         <ClusterCell>Preço médio: $1</ClusterCell>
@@ -29,7 +29,7 @@ const TableClusters = () => {
       </ClusterRow>
 
       <ClusterRow>
-        <ClusterCell style={{ display: "flex", alignItems: "center" }}>
+        <ClusterCell className="cluster-name" style={{ display: "flex", alignItems: "center" }}>
           <img src={logo} alt="Brasil" className="cluster-image" width={50} />
           <h2 className="cluster-title">Brasil</h2>
         </ClusterCell>

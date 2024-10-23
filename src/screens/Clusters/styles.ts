@@ -16,6 +16,12 @@ export const Container = styled.div`
     width: 95%;
     margin: 3rem auto;
   }
+
+  @media (max-width: 800px) {
+    main {
+      flex-wrap: wrap-reverse;
+    }
+  }
 `;
 
 export const TotalClusters = styled.div`
@@ -25,6 +31,7 @@ export const TotalClusters = styled.div`
   width: 20%;
   display: flex;
   justify-content: center;
+  margin-top: 3rem;
 
   span {
     display: block;
@@ -57,5 +64,9 @@ export const TotalClusters = styled.div`
     width: 15px;
     height: 10px;
     border-radius: 5px;
+  }
+
+  @media (max-width: 800px) {
+    width: 100%;
   }
 `;

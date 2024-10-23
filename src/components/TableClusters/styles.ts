@@ -5,12 +5,16 @@ export const ClusterTable = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 160%;
+  width: 100%;
 `;
 
 export const ClusterHeaderRow = styled.div`
   display: flex;
   font-weight: bold;
+
+  @media (max-width: 800px) {
+    display: none;
+  }
 `;
 
 export const ClusterCell = styled.div`
@@ -36,6 +40,19 @@ export const ClusterRow = styled.div`
 
     &:hover {
       opacity: 0.8;
+    }
+  }
+
+  @media (max-width: 800px) {
+    display: block;
+    text-align: center;
+
+    button {
+      width: 100%;
+    }
+
+    .cluster-name {
+      justify-content: center;
     }
   }
 `;
