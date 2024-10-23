@@ -3,6 +3,7 @@ import Home from "../screens/Home";
 import Login from "../screens/Login";
 import Dashboard from "../screens/Dashboard";
 import DashboardLayout from "../layouts/Dashboard";
+import Clusters from "../screens/Clusters";
 
 export const AppRoutes = () => {
   return (
@@ -11,7 +12,7 @@ export const AppRoutes = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/dashboard" element={<DashboardLayout />}>
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/dashboard/clusters" element={<Dashboard />} />
+        <Route path="/dashboard/clusters" element={<Clusters />} />
       </Route>
     </Routes>
   );
