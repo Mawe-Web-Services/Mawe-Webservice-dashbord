@@ -33,7 +33,6 @@ type RegisterFormData = z.infer<ReturnType<typeof createRegisterSchema>>
 const Register: React.FC = () => {
   const { t } = useTranslation()
 
-  // Crie o schema de registro com mensagens traduzidas
   const registerSchema = createRegisterSchema(t)
 
   const countryOptions = [
