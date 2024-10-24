@@ -137,6 +137,21 @@ const Register: React.FC = () => {
             options={countryOptions}
             placeholder="Choose your country"
             isSearchable={false}
+            formatOptionLabel={(option: any) => (
+              <div style={{ display: 'flex', alignItems: 'center' }}>
+                <ReactCountryFlag
+                  countryCode={option.code}
+                  svg
+                  style={{
+                    width: '1.5em',
+                    height: '1.5em',
+                    marginRight: '8px',
+                  }}
+                  aria-label={option.label}
+                />
+                {option.label}
+              </div>
+            )}
           />
           {errors.country && <span>{errors.country.message}</span>}
         </SelectContainer>
