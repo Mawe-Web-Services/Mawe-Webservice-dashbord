@@ -13,78 +13,85 @@ import {
   StyledImage,
   Features,
 } from './HomeStyles'
+import Header from '../../components/Header'
+import { LandingPage } from '../../AppStyles'
+import { Button } from '../Login/styles'
 
 const Home: React.FC = () => {
   const { t } = useTranslation()
 
   return (
-    <Container>
-      <TextImageContainer>
-        <TextContent>
-          <h2>{t('welcome')}</h2>
-          <p>{t('feature.runtime')}</p>
-        </TextContent>
-        <StyledImage src={newAsasImg} alt="New asas" />
-      </TextImageContainer>
+    <>
+      <Header />
+      <Container>
+        <LandingPage />
+        <TextImageContainer>
+          <TextContent>
+            <h2>{t('welcome')}</h2>
+            <p>{t('feature.runtime')}</p>
+          </TextContent>
+          <StyledImage src={newAsasImg} alt="New asas" />
+        </TextImageContainer>
 
-      <Features>
-        <FeaturesSection
-          title={t('feature.operationalExperience')}
-          icon="✅"
-          text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt quaerat quidem voluptatem numquam praesentium, quasi hic reprehenderit labore rem, deleniti dolor assumenda, facilis architecto qui nam ipsa at dolores consequatur."
-        />
-        <FeaturesSection
-          title={t('feature.operationalExperience')}
-          icon="🛠️"
-          text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt quaerat quidem voluptatem numquam praesentium, quasi hic reprehenderit labore rem, deleniti dolor assumenda, facilis architecto qui nam ipsa at dolores consequatur."
-        />
-        <FeaturesSection
-          title={t('feature.developerExperience')}
-          icon="💻"
-          text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt quaerat quidem voluptatem numquam praesentium, quasi hic reprehenderit labore rem, deleniti dolor assumenda, facilis architecto qui nam ipsa at dolores consequatur."
-        />
-        <FeaturesSection
-          title={t('feature.operationalExperience')}
-          icon="🔒"
-          text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt quaerat quidem voluptatem numquam praesentium, quasi hic reprehenderit labore rem, deleniti dolor assumenda, facilis architecto qui nam ipsa at dolores consequatur."
-        />
-        <FeaturesSection
-          title={t('feature.operationalExperience')}
-          icon="📊"
-          text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt quaerat quidem voluptatem numquam praesentium, quasi hic reprehenderit labore rem, deleniti dolor assumenda, facilis architecto qui nam ipsa at dolores consequatur."
-        />
-
-        <FeaturesSection
-          title={t('feature.operationalExperience')}
-          icon="⚙️"
-          text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt quaerat quidem voluptatem numquam praesentium, quasi hic reprehenderit labore rem, deleniti dolor assumenda, facilis architecto qui nam ipsa at dolores consequatur."
-        />
-      </Features>
-
-      <section>
-        <h1 style={{ textAlign: 'center', marginBottom: '20px' }}>
-          {t('feature.operationalExperience')}
-        </h1>
         <Features>
           <FeaturesSection
-            title={t('DeploySection.firstCard')}
-            icon="🪙"
+            title={t('feature.operationalExperience')}
+            icon="✅"
             text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt quaerat quidem voluptatem numquam praesentium, quasi hic reprehenderit labore rem, deleniti dolor assumenda, facilis architecto qui nam ipsa at dolores consequatur."
           />
           <FeaturesSection
-            title={t('DeploySection.SecondCard')}
-            icon="👁️‍🗨️"
+            title={t('feature.operationalExperience')}
+            icon="🛠️"
             text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt quaerat quidem voluptatem numquam praesentium, quasi hic reprehenderit labore rem, deleniti dolor assumenda, facilis architecto qui nam ipsa at dolores consequatur."
           />
           <FeaturesSection
-            title={t('DeploySection.thirdCard')}
-            icon="💵"
+            title={t('feature.developerExperience')}
+            icon="💻"
+            text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt quaerat quidem voluptatem numquam praesentium, quasi hic reprehenderit labore rem, deleniti dolor assumenda, facilis architecto qui nam ipsa at dolores consequatur."
+          />
+          <FeaturesSection
+            title={t('feature.operationalExperience')}
+            icon="🔒"
+            text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt quaerat quidem voluptatem numquam praesentium, quasi hic reprehenderit labore rem, deleniti dolor assumenda, facilis architecto qui nam ipsa at dolores consequatur."
+          />
+          <FeaturesSection
+            title={t('feature.operationalExperience')}
+            icon="📊"
+            text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt quaerat quidem voluptatem numquam praesentium, quasi hic reprehenderit labore rem, deleniti dolor assumenda, facilis architecto qui nam ipsa at dolores consequatur."
+          />
+
+          <FeaturesSection
+            title={t('feature.operationalExperience')}
+            icon="⚙️"
             text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt quaerat quidem voluptatem numquam praesentium, quasi hic reprehenderit labore rem, deleniti dolor assumenda, facilis architecto qui nam ipsa at dolores consequatur."
           />
         </Features>
-        <Footer />
-      </section>
-    </Container>
+
+        <section>
+          <h1 style={{ textAlign: 'center', marginBottom: '20px' }}>
+            {t('feature.operationalExperience')}
+          </h1>
+          <Features>
+            <FeaturesSection
+              title={t('DeploySection.firstCard')}
+              icon="🪙"
+              text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt quaerat quidem voluptatem numquam praesentium, quasi hic reprehenderit labore rem, deleniti dolor assumenda, facilis architecto qui nam ipsa at dolores consequatur."
+            />
+            <FeaturesSection
+              title={t('DeploySection.SecondCard')}
+              icon="👁️‍🗨️"
+              text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt quaerat quidem voluptatem numquam praesentium, quasi hic reprehenderit labore rem, deleniti dolor assumenda, facilis architecto qui nam ipsa at dolores consequatur."
+            />
+            <FeaturesSection
+              title={t('DeploySection.thirdCard')}
+              icon="💵"
+              text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt quaerat quidem voluptatem numquam praesentium, quasi hic reprehenderit labore rem, deleniti dolor assumenda, facilis architecto qui nam ipsa at dolores consequatur."
+            />
+          </Features>
+          <Footer />
+        </section>
+      </Container>
+    </>
   )
 }
 
