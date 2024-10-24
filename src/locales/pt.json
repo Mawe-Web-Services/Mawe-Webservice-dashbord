@@ -1,11 +1,10 @@
 {
   "header": {
     "title": "MWS: A nuvem que impulsiona o seu futuro.",
-
     "products": "Produtos",
     "docs": "Documentação",
     "support": "Suporte",
-    "login": "Login"
+    "login": "Conecte-se"
   },
 
   "buttonHeader": {
@@ -21,8 +20,8 @@
     "operationalExperience": "Seção de Implantação"
   },
 
-  "Deploy Sectio": {
-    "firtCard": "Centrado no desenvolvedor",
+  "DeploySection": {
+    "firstCard": "Centrado no desenvolvedor",
     "SecondCard": "Centrado em aplicativos",
     "thirdCard": "Centrado na produção"
   },
@@ -32,6 +31,7 @@
     "contact": "Contato: meu-email@exemplo.com",
     "credit": "Feito com amor © 2024 Mawe Web Service"
   },
+
   "login": {
     "title": "Logar na sua conta",
     "emailLabel": "Endereço de e-mail",
@@ -42,5 +42,24 @@
     "newUser": "Novo na MWS?",
     "registerLink": "Registrar",
     "forgetPassword": "Esqueceu sua senha?"
+  },
+
+  "register": {
+    "title": "Crie sua conta",
+    "firstnamePlaceholder": "Primeiro nome",
+    "lastnamePlaceholder": "Sobrenome",
+    "emailPlaceholder": "Endereço de e-mail",
+    "selectCountry": "Selecione um país",
+    "selectLanguage": "Selecione uma linguagem",
+    "rolePlaceholder": "Qual é o seu cargo?",
+    "registerButton": "Criar sua conta",
+    "errors": {
+      "firstnameRequired": "O primeiro nome é obrigatório.",
+      "lastnameRequired": "O sobrenome é obrigatório.",
+      "emailInvalid": "Endereço de e-mail inválido.",
+      "countryRequired": "O país é obrigatório.",
+      "languageRequired": "A linguagem é obrigatória.",
+      "roleRequired": "O papel é obrigatório."
+    }
   }
 }
