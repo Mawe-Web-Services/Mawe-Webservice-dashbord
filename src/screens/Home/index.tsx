@@ -1,10 +1,9 @@
-import type React from 'react'
-import { useTranslation } from 'react-i18next'
-import newAsasImg from '../../assets/newasas.png'
-import FeaturesSection from '../../components/FeaturesSection'
-import Footer from '../../components/Footer/Footer'
-import LanguageSwitcher from '../../components/Select/LanguageSwitcher'
-import '../../i18n/index'
+import type React from "react";
+import { useTranslation } from "react-i18next";
+import newAsasImg from "../../assets/newasas.png";
+import FeaturesSection from "../../components/FeaturesSection";
+import Footer from "../../components/Footer/Footer";
+import "../../i18n/index";
 
 import {
   Container,
@@ -18,7 +17,16 @@ import { LandingPage } from '../../AppStyles'
 import { Button } from '../Login/styles'
 
 const Home: React.FC = () => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
+
+  const animateButton = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const button = e.currentTarget;
+    button.classList.remove("animate");
+
+    button.offsetWidth;
+    button.classList.add("animate");
+  };
 
   return (
     <>
@@ -95,4 +103,4 @@ const Home: React.FC = () => {
   )
 }
 
-export default Home
+export default Home;

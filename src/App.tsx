@@ -1,14 +1,12 @@
-import type React from 'react'
-import { useTranslation } from 'react-i18next'
-import { BrowserRouter, useLocation } from 'react-router-dom'
-import AppRoutes from './Routes/routes'
+import type React from "react";
+import { AppRoutes } from "./routes/routes";
 
 const App: React.FC = () => {
   return (
-    <BrowserRouter>
+    <div className="App">
       <AppRoutes />
-    </BrowserRouter>
-  )
-}
+    </div>
+  );
+};
 
-export default App
+export default App;

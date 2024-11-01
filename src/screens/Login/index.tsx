@@ -30,9 +30,9 @@ const Login = () => {
   }
 
   const schema = z.object({
-    email: z.string().email({ message: 'Este e-mail está inválido.' }),
+    email: z.string().email({ message: t("login.emailAddressInvalid") }),
     password: z.string(),
-  })
+  });
 
   const {
     register,
@@ -42,38 +42,37 @@ const Login = () => {
     formState: { errors },
   } = useForm<Inputs>({
     resolver: zodResolver(schema),
-  })
+  });
 
   useEffect(() => {
-    setFocus('email')
-  }, [setFocus])
+    setFocus("email");
+  }, [setFocus]);
 
-  const onSubmit = async (data: Inputs) => {
-    const response = await useLogin(data)
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    const response = await useLogin(data);
 
     if (response.result && response.result.code === 200) {
-      toast.success('Usuário logado com sucesso.')
-      reset()
+      toast.success(t("login.success"));
+      setFocus("email");
+      reset();
     } else {
-      toast.error(
-        'Algo deu errado com seu login, confira os campos e tente novamente.'
-      )
+      toast.error(t("login.error"));
     }
-  }
+  };
 
   return (
     <Container>
       <LoginBox>
         <form noValidate onSubmit={handleSubmit(onSubmit)}>
-          <h2>{t('login.title')}</h2>
+          <h2>{t("login.title")}</h2>
           <Label>
-            {t('login.emailLabel')}
+            {t("login.emailLabel")}
             <InputContainer>
               <MdMail />
               <input
                 type="email"
-                placeholder={t('login.emailPlaceholder')}
-                {...register('email')}
+                placeholder={t("login.emailPlaceholder")}
+                {...register("email")}
               />
             </InputContainer>
             {errors.email?.message && (
@@ -86,22 +85,22 @@ const Login = () => {
               <FaLock />
               <input
                 type="password"
-                placeholder={t('login.passwordPlaceholder')}
-                {...register('password')}
+                placeholder={t("login.passwordPlaceholder")}
+                {...register("password")}
               />
             </InputContainer>
           </Label>
-          <Button type="submit">{t('login.loginButton')}</Button>
+          <Button>{t("login.loginButton")}</Button>
         </form>
         <Divisor />
         <CreateAccount>
-          {t('login.newUser')}
-          <Link to="/register">{t('login.registerLink')}</Link>
+          {/* biome-ignore lint/a11y/useValidAnchor: <explanation> */}
+          {t("login.newUser")} <a href="#">{t("login.registerLink")}</a>
         </CreateAccount>
       </LoginBox>
-      <ForgetPassword href="#">{t('login.forgetPassword')}</ForgetPassword>
+      <ForgetPassword href="#">{t("login.forgetPassword")}</ForgetPassword>
     </Container>
-  )
-}
+  );
+};
 
 export default Login
