@@ -16,18 +16,22 @@
 		"i18next": "^23.15.2",
 		"i18next-react": "^0.2.2",
 		"react": "^18.3.1",
+		"react-country-flag": "^3.1.0",
 		"react-dom": "^18.3.1",
 		"react-hook-form": "^7.53.0",
 		"react-i18next": "^15.0.2",
 		"react-icons": "^5.3.0",
-		"react-router-dom": "^6.26.2",
+		"react-router-dom": "^6.27.0",
 		"react-scripts": "5.0.1",
 		"react-select": "^5.8.1",
 		"react-toastify": "^10.0.5",
+		"react-world-flags": "^1.6.0",
 		"styled-components": "^6.1.13",
 		"typescript": "^4.4.2",
 		"web-vitals": "^2.1.0",
-		"zod": "^3.23.8"
+		"world-countries": "^5.0.0",
+		"zod": "^3.23.8",
+		"zod-joda": "^1.1.3"
 	},
 	"scripts": {
 		"start": "react-scripts start",
@@ -52,6 +56,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.2",
 		"@types/i18next": "^13.0.0",
-		"@types/react-i18next": "^8.1.0"
+		"@types/react-i18next": "^8.1.0",
+		"@types/react-world-flags": "^1.6.0"
 	}
 }

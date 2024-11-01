@@ -22,7 +22,6 @@
 
   "DeploySection": {
     "firstCard": "Developer-centric",
-
     "SecondCard": "App-centric",
     "thirdCard": "Production-centric"
   },
@@ -43,5 +42,24 @@
     "newUser": "New to MWS?",
     "registerLink": "Sign up",
     "forgetPassword": "Forgot your password?"
+  },
+
+  "register": {
+    "title": "Register",
+    "firstnamePlaceholder": "First name",
+    "lastnamePlaceholder": "Last name",
+    "emailPlaceholder": "Email address",
+    "selectCountry": "Select a country",
+    "selectLanguage": "Select a language",
+    "rolePlaceholder": "What is your role?",
+    "registerButton": "Register",
+    "errors": {
+      "firstnameRequired": "O primeiro nome é obrigatório.",
+      "lastnameRequired": "O sobrenome é obrigatório.",
+      "emailInvalid": "Endereço de e-mail inválido.",
+      "countryRequired": "O país é obrigatório.",
+      "languageRequired": "A linguagem é obrigatória.",
+      "roleRequired": "O papel é obrigatório."
+    }
   }
 }
