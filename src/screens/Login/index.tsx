@@ -1,3 +1,6 @@
+import React, { useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
+import { useNavigate, Link } from 'react-router-dom' // Importar useNavigate e Link
 import {
   Button,
   Container,
@@ -8,26 +11,23 @@ import {
   LoginBox,
   ForgetPassword,
   ErrorText,
-} from "./styles";
-import "../../i18n/index";
-import { useTranslation } from "react-i18next";
-
-import { MdMail } from "react-icons/md";
-import { FaLock } from "react-icons/fa";
-import { z } from "zod";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { toast } from "react-toastify";
-import { useEffect } from "react";
-import useLogin from "../../hooks/useLogin";
+} from './styles'
+import { MdMail } from 'react-icons/md'
+import { FaLock } from 'react-icons/fa'
+import { z } from 'zod'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { toast } from 'react-toastify'
+import useLogin from '../../hooks/useLogin'
 
 const Login = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
+  const navigate = useNavigate()
 
   type Inputs = {
-    email: string;
-    password: string;
-  };
+    email: string
+    password: string
+  }
 
   const schema = z.object({
     email: z.string().email({ message: t("login.emailAddressInvalid") }),
@@ -80,7 +80,7 @@ const Login = () => {
             )}
           </Label>
           <Label>
-            {t("login.passwordLabel")}
+            {t('login.passwordLabel')}
             <InputContainer>
               <FaLock />
               <input
@@ -103,4 +103,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Login

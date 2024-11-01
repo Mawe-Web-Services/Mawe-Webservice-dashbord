@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { themes } from "../../styles/themes";
+import styled from 'styled-components'
+import { themes } from '../../styles/themes'
 
-const { colors } = themes;
+const { colors } = themes
 
 export const Container = styled.div`
   background: linear-gradient(to bottom, #928fe6, #3731a0);
@@ -11,7 +11,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-`;
+`
 
 export const LoginBox = styled.div`
   background-color: #fff;
@@ -40,7 +40,7 @@ export const LoginBox = styled.div`
   @media (min-width: 801px) and (max-width: 1000px) {
     width: 70%;
   }
-`;
+`
 
 export const InputContainer = styled.div`
   border: 1px solid gray;
@@ -55,7 +55,7 @@ export const InputContainer = styled.div`
     font-size: 1rem;
     margin: 0 0.5rem;
   }
-`;
+`
 
 export const Label = styled.label`
   display: block;
@@ -70,7 +70,7 @@ export const Label = styled.label`
       outline: none;
     }
   }
-`;
+`
 
 export const Button = styled.button`
   width: 100%;
@@ -86,11 +86,11 @@ export const Button = styled.button`
   &:hover {
     opacity: 1;
   }
-`;
+`
 
 export const Divisor = styled.div`
   border: 0.1px solid #dddddd;
-`;
+`
 
 export const CreateAccount = styled.span`
   display: block;
@@ -100,13 +100,13 @@ export const CreateAccount = styled.span`
   a {
     color: ${colors.primary};
   }
-`;
+`
 
 export const ForgetPassword = styled.a`
   color: ${colors.white};
   margin-top: 1rem;
-`;
+`
 
 export const ErrorText = styled.p`
   color: ${colors.error};
-`;
+`
